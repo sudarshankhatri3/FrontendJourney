@@ -1,0 +1,32 @@
+*{
+    margin:10;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+#myForm{
+    color: blue;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    padding: 50px;
+    border-radius: 20px;
+    gap: 10px;
+}
+.inputValid{
+    width: 250px;
+    height: 20px;
+    text-align: left;
+    border:1px solid #ccc
+}
+#botton{
+    
+}
