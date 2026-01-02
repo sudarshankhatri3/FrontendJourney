@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navigation{
+    color:red;
+    background-color: aqua;
+}
+.navigation_list{
+    list-style: none;
+    color: blanchedalmond;
+    height: 50px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:end;
+    gap: 30px;
+}
+.intro{
+    background-color: beige;
+    color: coral;
+    margin:20px auto;
+    padding:30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.intro img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.intro_details h1{
+    font-size: 2rem;
+    width: 600px;
+    line-height: 1.4;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.intro:hover {
+    /* background-color: cyan; */
+    border-color: rgba(23, 177, 204, 0.89);               /* border changes */
+    transform: translateY(-4px);      /* subtle lift */
+}
+
+.about{
+    background-color: rgb(5, 5, 65);
+    color:rgb(146, 219, 191);
+    margin:10px;
+    padding:30px;
+    display:flex;
+    justify-content:column;
+    align-items: center;    
+}
+.about_me p{
+    height:50px;
+    width: 600px;
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #FF6347; 
+
+}
