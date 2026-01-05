@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: blueviolet;
+        color: azure;
+        font-size: medium;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 900;
+        margin: 0px;
+        padding: 30px;
+
+      }
+      .nav_div{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        align-items:stretch ;
+        flex-shrink: inherit;
+        flex-flow: column; 
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header section  -->
+    <header>
+      <nav id="navigation">
+        <div class="nav_div">
+          <div class="navigaton_section">
+            <ul>
+              <li><a href="website_cloner">Website Cloner</a></li>
+            </ul>
+          </div>
+          <div class="navigaton_section">
+            <ul>
+              <li><a href="pricing">Pricing</a></li>
+              <li><a href="log">Log In</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- first section  -->
+      <section id="first_section">
+        <div class="first_content">
+          <article class="content">
+            <div class="first_heading">
+              <h1>Clone a Website in Minutes</h1>
+            </div>
+            <div class="first_heading">
+              <p>
+                Convert entire webpages or just sections into HTML with Tailwind
+                CSS. <br />
+                Perfect as context for AI, migrating your own site, or starting
+                a new project.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- second secton  -->
+      <section id="second_section">
+        <div class="second-container">
+          <div class="second-data">
+            <a
+              href="https://chromewebstore.google.com/detail/website-cloner/eplcmcbnbokmedfbnknkkddoeblkclnn?authuser=0&hl=en"
+              >Get the Browser extension</a
+            >
+            <p>Extension now available in the Chrome Web Store!</p>
+          </div>
+          <div class="second-data">
+            <form method="POST">
+              <label for="clone-url">Enter website URL</label>
+              <input
+                id="clone-url"
+                type="search"
+                placeholder="https://example.com"
+              />
+            </form>
+            <p>Clone</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
