@@ -148,8 +148,19 @@ class pari:
                 oCount+=1
 
         return [eCount,oCount]
-    
-            
+    # Check if a list is sorted
+
+    # Remove duplicates (preserve order)
+    # # [1, 2, 2, 3, 1] → [1, 2, 3]
+    def preserveOrder(self):
+        data=set(self.arr)
+        ls=list(data)
+        for i in range(len(ls)-1):
+            for j in range(len(ls)-1):
+                if(ls[j]>ls[j+1]):
+                    ls[j],ls[j+1]=ls[j+1],ls[j]
+
+        return ls           
 
 new=[1,2,3,4,5,6,6,7,7,5,4,3,2,4]
 target=5
@@ -157,20 +168,10 @@ couple=pari(new,target)
 print(f'pair for sum:{couple.pair()}')  
 print(f'sum of element:{couple.sum()}')  
 print(f'max in array:{couple.max()}')  
-print(f'Count even and odd:{couple.count()}')          
-
-# Check if a list is sorted
-
-# Remove duplicates (preserve order)
-
-# [1, 2, 2, 3, 1] → [1, 2, 3]
+print(f'Count even and odd:{couple.count()}')
+print(f'preserve order:{couple.preserveOrder()}')          
 
 
-# Second largest element
-
-# Rotate list right by k
-
-# [1,2,3,4,5], k=2 → [4,5,1,2,3]
 
 
 # Move all zeros to end
@@ -203,4 +204,15 @@ print(f'Count even and odd:{couple.count()}')
 
 
 # Majority element (appears > n/2 times)
+
+
+
+check=array('l',[23,45,56,98,12,45,56,22,45])
+
+res=[x for x in check  if x%2==0]
+print(f'check data:{res}')
+
+res1=check[3:6]
+print(f'slicing:{res1}')
+
 
