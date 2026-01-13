@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.main-div{
+    color: rgb(0, 0, 0);
+    width: 150px;
+    height:100px;
+    border:5px solid green;
+    position:relative;
+    top: 20px;
+    left: 100px;
+}
+.first{
+    color: brown;
+    border: 2px solid red;
+    position:absolute;
+    top: 20%;
+    left:20%;
+}
+.second{
+    color: brown;
+    border: 2px solid red;
+    position:absolute;
+    top: 40%;
+    left:40%;
+}
+.third{
+    color: brown;
+    border: 2px solid red;
+    position:absolute;
+    top: 60%;
+    left:60%;
+}
+.main-sec{
+    color: rgb(0, 0, 0);
+    width: 150px;
+    height:100px;
+    border:5px solid green;
+    position:fixed;
+    top: 80%;
+    left: 100px;
+}
+.main-third{
+    color: rgb(0, 0, 0);
+    width: 150px;
+    height:100px;
+    border:5px solid green;
+    position:sticky;
+    top: 150px;
+    left: 300px;
+}

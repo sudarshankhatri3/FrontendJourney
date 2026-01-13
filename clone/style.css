@@ -1,0 +1,61 @@
+*{
+    margin:0;
+    padding: 0;
+}
+header{
+    background-color: #FFF;
+}
+.navigation{
+    position: relative;
+    gap: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+.navigation-image img{
+    height: 2rem;
+    width: auto;
+    position: absolute;
+    object-fit: contain;
+    margin-left:10px;
+    margin-top: 10px;
+}
+.navigation-list ul{
+    list-style: none;
+    position: absolute;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+li,a{
+    text-decoration: none;
+    color: #000000;
+}
+.enroll-form {
+    background-color: green;
+    width: 6rem;
+    height: 46px;
+    box-shadow: rgb(12, 67, 50) 3px 3px;
+    margin-left: 700px;
+    margin-top: 20px;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+    
+.enroll-form a{
+    color:#FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+.menu-page{
+   margin-top: 30px;
+   
+}
+
