@@ -1,13 +1,13 @@
-// async function runProcess() {
-//     try{
-//         const response=await fetch('https://jsonplaceholder.typicode.com/todos/1')
-//         const json=await response.json()
-//         console.log(json)
-//     }catch(error){
-//         console.log(error)
-//     }
-// }
-// runProcess()
+async function runProcess() {
+    try{
+        const response=await fetch('https://jsonplaceholder.typicode.com/todos')
+        const json=await response.json()
+        console.log(json)
+    }catch(error){
+        console.log(error)
+    }
+}
+runProcess()
 
 
 // const data=new Promise((resolve,reject)=>{
@@ -28,24 +28,27 @@
 // })
 
 
-async function wait(){
-    try{
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos');
-        const json = await response.json();
-        console.log(json)
-    }
-    catch(err){
-        console.log(err + 'error')
-    }
-}
-wait()
+// async function wait(){
+//     try{
+//         const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+//         const json = await response.json();
+//         console.log(json)
+//     }
+//     catch(err){
+//         console.log(err + 'error')
+//     }
+// }
+// wait()
 
 
 
-const res = fetch('https://jsonplaceholder.typicode.com/todos').then((messg)=>{
-    console.log(messg)
-}).catch((msg)=>{
-    console.log(msg)
-}).finally(()=>{
-    console.log("Completed")
-})
+// const res = fetch('https://jsonplaceholder.typicode.com/todos').then((messg)=>{
+//     console.log(messg)
+// }).catch((msg)=>{
+//     console.log(msg)
+// }).finally(()=>{
+//     console.log("Completed")
+// })
+
+
+
