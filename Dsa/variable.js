@@ -144,16 +144,16 @@ const data=new Example()
 data.increase(34)
 // 21. Write a function that can only be called once; subsequent calls return undefined.
 // 22. Demonstrate the difference between let and var in loops with setTimeout.
-let dt=2323
-var hi="sdfksjfsdkfjs"
-setTimeout(function(){
-    console.log("hello iam let:",dt)
-    console.log("var before:",hi)
-    hi="sudarshan khatri"
-    console.log("After hi:",hi)
-},1000)
-console.log(dt)
-console.log(hi)
+    // let dt=2323
+    // var hi="sdfksjfsdkfjs"
+    // setTimeout(function(){
+    //     console.log("hello iam let:",dt)
+    //     console.log("var before:",hi)
+    //     hi="sudarshan khatri"
+    //     console.log("After hi:",hi)
+    // },1000)
+    // console.log(dt)
+    // console.log(hi)
 // 23. Swap two object properties without using a temporary variable.
 function swp(a,b){
     a=a+b
@@ -178,10 +178,39 @@ console.log(changeVrb)
 // 27. Implement a function that accepts variable names as strings and initializes them
 // dynamically.
 // 28. Write a function that automatically converts numeric strings to numbers in parameters.
+function converter(id){
+    let Id=Number(id)
+    return Id
+}
+let dataId="121212"
+console.log(converter(dataId))
 // 29. Demonstrate temporal dead zone (TDZ) using let and const.
+    // console.log(foo)
+    // console.log(fu)
+    // let foo="Hello miss"
+    // const fu="Hello sis"
 // 30. Track how many times a property of an object has been accessed.
+const ob={
+    "name":"sudarshan",
+    "age":23,
+    "cast":"khatri",
+    "level":"Bachelor",
+    "hobby":["swimming","Dancing","Alcohol"]
+}
+let i=0
+for(let data in ob){
+    console.log(`key ${data} and value ${ob[data]}`)
+    i++
+}
+console.log(i)
+let examp=[1,2,3,4,54,5,6,5,4,67]
+examp.forEach((value,index)=>{
+    console.log(`${index}:${value}`)
+})
 // 31. Write a function that logs the value of this in different contexts.
+console.log(this)
 // 32. Auto-increment a variable every second using closures.
+
 // 33. Count undefined variables in an object.
 // 34. Swap two nested object properties safely.
 // 35. Deep copy a variable safely without using JSON methods.

@@ -3,82 +3,112 @@
 // Intermediate → Advanced)
 // 1⃣ Basic Level (1–15)
 
-const { reject } = require("async")
+// const { reject } = require("async")
 
-// #callback hell 
-function callback(){
-    setTimeout(()=>{
-        console.log("hello sudarshan  khatri")
-    },1000)
-    console.log("I am practicing callback hell")
-}
-function dataTransfer(callback){
-    console.log("Your data is cut off 80 percentage !!!!")
-    callback()
-    console.log("your name is what")
-}
-function dataEmpty(dataTransfer){
-    console.log("your data is finsih warning is given already")
-    dataTransfer()
-}
+// // #callback hell 
+// function callback(){
+//     setTimeout(()=>{
+//         console.log("hello sudarshan  khatri")
+//     },1000)
+//     console.log("I am practicing callback hell")
+// }
+// function dataTransfer(callback){
+//     console.log("Your data is cut off 80 percentage !!!!")
+//     callback()
+//     console.log("your name is what")
+// }
+// function dataEmpty(dataTransfer){
+//     console.log("your data is finsih warning is given already")
+//     dataTransfer()
+// }
 
-dataEmpty(function(){
-    dataTransfer(function(){
-        callback(function(){
-            console.log("done")
-        })
+// dataEmpty(function(){
+//     dataTransfer(function(){
+//         callback(function(){
+//             console.log("done")
+//         })
+//     })
+// })
+// // Focus: understanding Promise creation, then, catch, and basic async/await.
+// // 1. Create a simple Promise that resolves with "Hello World" and log the result using .then().
+// let res=new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//        resolve("Hello world") 
+//     },2000);
+// })
+// res.then((value)=>{
+//     console.log(value)
+// })
+// .catch((error)=>{
+//     console.log(error)
+// }).finally(()=>{
+//     console.log("program executed sucessfully !!!!")
+// })
+// // 2. Create a Promise that rejects with an error and handle it with .catch().
+// const resHandle=new Promise((resolve,reject)=>{
+//     let isSucess=true
+//     if(isSucess){
+//         resolve("He is sucessfull")
+//     }else{
+//         reject("he is not sucess")
+//     }
+    
+// })
+// resHandle.then((value)=>{
+//     console.log(value)
+// }).catch((error)=>{
+//     console.log(error)
+// }).finally("all task done")
+// // 3. Create a Promise that resolves after 2 seconds using setTimeout.
+// let twoSec=new Promise((resolve,reject)=>{
+//     let a=34
+//     let b=45
+//     setTimeout((value)=>{
+//         value=a+b
+//         if(value){
+//             resolve(value)
+//         }else{
+//             reject("No value")
+//         }
+//     },2000)
+// })
+// twoSec.then((value)=>{
+//     console.log(value)
+// }).catch((error)=>{
+//     console.log(error)
+// }).finally("program executed finally !!!!")
+// 4. Use Promise.resolve() to immediately resolve a value.
+const cat=new Promise((resolve,reject)=>{
+    fetch("https://api.freeapi.app/api/v1/public/randomproducts/30")
+    .then((response)=>{
+        resolve(response)    
+    })
+    .catch(error => reject(error));
+})
+cat.then((res)=>res.json())
+   .then((data)=>{
+      console.log(data)
+   })
+   .catch((err)=>{
+    console.log(err)
+   })
+ // 5. Use Promise.reject() to immediately reject with an error.
+const product=new Promise((resolve,reject)=>{
+    fetch("https://api.freeapi.app/api/v1/public/cats/cat/random")
+    .then((response)=>{
+        if(response.ok){
+            resolve(response)
+        }else{
+            reject("Network not found")
+        }
     })
 })
-// Focus: understanding Promise creation, then, catch, and basic async/await.
-// 1. Create a simple Promise that resolves with "Hello World" and log the result using .then().
-let res=new Promise((resolve,reject)=>{
-    setTimeout(() => {
-       resolve("Hello world") 
-    },2000);
+product.then(data=>data.json())
+.then((res)=>{
+    console.log(res)
+}).catch((err)=>{
+    console.log(err)
 })
-res.then((value)=>{
-    console.log(value)
-})
-.catch((error)=>{
-    console.log(error)
-}).finally(()=>{
-    console.log("program executed sucessfully !!!!")
-})
-// 2. Create a Promise that rejects with an error and handle it with .catch().
-const resHandle=new Promise((resolve,reject)=>{
-    let isSucess=true
-    if(isSucess){
-        resolve("He is sucessfull")
-    }else{
-        reject("he is not sucess")
-    }
-    
-})
-resHandle.then((value)=>{
-    console.log(value)
-}).catch((error)=>{
-    console.log(error)
-}).finally("all task done")
-// 3. Create a Promise that resolves after 2 seconds using setTimeout.
-let twoSec=new Promise((resolve,reject)=>{
-    let a=34
-    let b=45
-    setTimeout((value)=>{
-        value=a+b
-        if(value){
-            resolve(value)
-        }else{
-            reject("No value")
-        }
-    },2000)
-})
-twoSec.then((value)=>{
-    console.log(value)
-}).catch((error)=>{
-    console.log(error)
-}).finally("program executed finally !!!!")
-// 4. Use Promise.resolve() to immediately resolve a value.
-// 5. Use Promise.reject() to immediately reject with an error.
 // 6. Convert a callback-based function (e.g., setTimeout) into a Promise.  
 // 7. Write an async function that returns a string and log it using await.
 // 8. Write an async function that throws an error and handle it using try/catch.
