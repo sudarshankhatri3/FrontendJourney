@@ -3,6 +3,8 @@
 // Intermediate → Advanced)
 // 1⃣ Basic Level (1–15)
 
+const { reject } = require("async");
+
 // const { reject } = require("async")
 
 // // #callback hell 
@@ -163,4 +165,12 @@ product.then(data=>data.json())
 // 47. Write a function to handle dependent async tasks in order using async/await.
 // 48. Implement a polling function that repeatedly calls an API until a condition is met.
 // 49. Create a function that executes multiple async tasks in batches and collects results.
+const url=[
+    "https://dogapi.dog/api/v2",
+    "https://api.alquran.cloud",
+    "https://alquran.api.islamic.network",
+    "https://alquran.api.alislam.ru"
+]
+
+
 // 50. Implement a function that wraps a callback API into a Promise-based API and demonstrates error handling.

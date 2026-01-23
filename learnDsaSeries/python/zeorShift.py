@@ -5,6 +5,9 @@ class Solution:
         Returns a new list with zeros moved to the end while preserving the order of non‑zero elements.
         """
         # Your implementation here
+        res=[x for x in arr  if x!=0]
+        zero=[0]*arr.count(0)
+        return res.extend(zero)
        
     
 
