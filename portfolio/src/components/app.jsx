@@ -12,7 +12,18 @@ function SubmitButton(){
             <label htmlFor="password">Password</label>
             <input type="password"/>
         </form>
+    )}
+function Footer(){
+    return(
+        <footer>
+            <div>
+                <p>Hello sudarshan khatri</p>
+                <p>How are you?</p>
+                <p>I am fine</p>
+            </div>
+        </footer>
     )
 }
-export default SubmitButton
-export  {App}
+export  {SubmitButton,Footer}
+export default App
+

@@ -43,7 +43,7 @@ root.left.left.right=Node(42)
 
 print('Preorder Traverasal:')
 preorderTraversal(root)
-print("\n")---------
+print("\n")
 print('Inorder Traversal:')
 inorderTraversal(root)
 print("\n")
