@@ -103,3 +103,20 @@ console.log(reverseData("hello nepal"))
 
 
 
+function splicerValue(data){
+    return data
+}
+
+
+function spliceChecker(dataArray,startIdx,endIdx,callBack){
+    let rs=[]
+    for(let i=startIdx;i<=endIdx;i++){
+        let value=callBack(dataArray[i])
+        rs.push(value)
+    }
+    return rs
+}
+
+
+let rng=[12,34,56,32,5,6,67,7,532,2]
+console.log(spliceChecker(rng,2,7,splicerValue))
