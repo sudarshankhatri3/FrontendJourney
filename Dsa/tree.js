@@ -27,3 +27,13 @@
 // nodes).
 // 15. Implement lowest common ancestor (LCA) for two nodes in a
 // binary tree
+
+
+
+// ================ TO-DO APP USING ARRAYS, OBJECTS & FUNCTIONS ================
+
+// 1. DATA STORAGE (Array of Task Objects)
+
+
+// 2. FUNCTION DECLARATIONS
+

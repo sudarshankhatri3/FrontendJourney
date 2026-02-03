@@ -1,6 +1,6 @@
-function App(){
+function App(props){
     return(
-        <h2>Hello sudarshan khatri</h2>
+        <h2>Hello {props.name}</h2>
     )
 }
 
@@ -13,11 +13,11 @@ function SubmitButton(){
             <input type="password"/>
         </form>
     )}
-function Footer(){
+function Footer(props){
     return(
         <footer>
             <div>
-                <p>Hello sudarshan khatri</p>
+                <p>Hello {props.name} {props.cast}</p>
                 <p>How are you?</p>
                 <p>I am fine</p>
             </div>
