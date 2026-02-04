@@ -3,8 +3,19 @@
 // 1⃣ Basic Level (1–15)
 // Focus: understanding forEach syntax, iteration over arrays, and simple operations.
 // 1. Use forEach() to print each element of an array.
+let arrayData=[20,34,56,67,43,56,865]
+arrayData.forEach((data)=>{
+    console.log(data)
+})
 // 2. Use forEach() to print each element with its index.
+arrayData.forEach((value,index)=>{
+    console.log(`Index ${index} and value ${value}`)
+})
 // 3. Use forEach() to print elements of an array in reverse order.
+let rev=[]
+arrayData.forEach((data)={
+    rev.shift(data)
+})
 // 4. Use forEach() to print only even numbers from an array.
 // 5. Use forEach() to print only odd numbers from an array.
 // 6. Use forEach() to sum all numbers in an array.
@@ -59,5 +70,4 @@
 // arrays.
 // 48. Use forEach() to track cumulative sums at each step in an array.
 // 49. Use forEach() with try/catch to safely process an array with potential errors.
-// 50. Use forEach() to generate a report from an array of objects (e.g., total sales, average
-// rating, number of products above threshold).
+// 50. Use forEach() to generate a report from an array of objects (e.g., total sales, average rating, number of products above threshold).

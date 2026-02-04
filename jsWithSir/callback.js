@@ -124,6 +124,74 @@ console.log(spliceChecker(rng,2,7,splicerValue))
 
 
 
-function reducerList(val){
+const dataResponse=new Promise(function(resolve,reject){
+    let result=true
+    if(result){
+        resolve("hello iam sudarshan khatri")
+    }else{
+        reject("Iam not sudarshan khatri")
+    }
+})
+
+dataResponse.then(function(data){
+    console.log(data)
+}).catch(function(data){
+    console.log(data)
+}).finally(function(){
+    console.log("resolve")
+})
+
+
+
+const promise1=new Promise(function(resolve){
+    setTimeout(resolve("hello sudarshan khatri"),2000)
+})
+const promise2=new Promise(function(resolve){
+    setTimeout(resolve("Hi iam sudarshan man"),1000)
+})
+const promise3=new Promise(function(resolve){
+    setTimeout(resolve("hi iam pyakuli"),5000)
+})
+
+Promise.all([promise1,promise2,promise3]).then(function(res){
+    console.log(res)
+}).catch(function(ress){
+    console.log(ress)
+})
+
+Promise.race([promise1,promise2,promise3]).then(function(data){
+    console.log(data)
+})
+// Fetch user data and:
+
+// If age >= 18, fetch posts of that user
+
+// Else return "Access denied"
+
+// API
+
+// Users: https://jsonplaceholder.typicode.com/users
+
+// Posts: https://jsonplaceholder.typicode.com/posts
+
+
+const apiHandler=new Promise((resolve,reject)=>{
+    fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+        if(response.ok){
+            return response.json()
+        }else{
+            reject("API not handled properly")
+        }
+    }).then(data=>{
+        resolve(data)
+    }).catch(error=>{
+        reject(error)
+    })
     
-}
+})
+apiHandler.then((data)=>{
+    console.log(data)
+}).catch((resp)=>{
+    console.log(resp)
+})
+
