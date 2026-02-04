@@ -195,3 +195,55 @@ apiHandler.then((data)=>{
     console.log(resp)
 })
 
+const apiHandler1=new Promise((resolve,reject)=>{
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response)=>{
+        if(response.ok){
+            return response.json()
+        }else{
+            reject("api not handled")
+        }
+    }).then(data=>{
+        resolve(data)
+    }).catch(error=>{
+        reject(error)
+    })
+})
+
+
+const apiHandler2=new Promise((resolve,reject)=>{
+    fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((response)=>{
+        if(response.ok){
+            return response.json()
+        }else{
+            reject("api not handled")
+        }
+    }).then(data=>{
+        resolve(data)
+    }).catch(error=>{
+        reject(error)
+    })
+})
+
+const apiHandler3=new Promise((resolve,reject)=>{
+    fetch("https://jsonplaceholder.typicode.com/comments")
+    .then((response)=>{
+        if(response.ok){
+            return response.json()
+        }else{
+            reject("api not handled")
+        }
+    }).then(data=>{
+        resolve(data)
+    }).catch(error=>{
+        reject(error)
+    })
+})
+
+
+Promise.all([apiHandler1,apiHandler2,apiHandler3]).then(data=>{
+    console.log(data)
+}).catch(error=>{
+    console.log(error)
+})
