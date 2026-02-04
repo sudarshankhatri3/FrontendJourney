@@ -120,3 +120,10 @@ function spliceChecker(dataArray,startIdx,endIdx,callBack){
 
 let rng=[12,34,56,32,5,6,67,7,532,2]
 console.log(spliceChecker(rng,2,7,splicerValue))
+
+
+
+
+function reducerList(val){
+    
+}
