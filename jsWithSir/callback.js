@@ -175,7 +175,6 @@ Promise.race([promise1,promise2,promise3]).then(function(data){
 // Posts: https://jsonplaceholder.typicode.com/posts
 
 
-const apiHandler=new Promise((resolve,reject)=>{
     fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
         if(response.ok){
             return response.json()
@@ -183,12 +182,12 @@ const apiHandler=new Promise((resolve,reject)=>{
             reject("API not handled properly")
         }
     }).then(data=>{
-        resolve(data)
+        console.log(data)
     }).catch(error=>{
         reject(error)
     })
     
-})
+
 apiHandler.then((data)=>{
     console.log(data)
 }).catch((resp)=>{

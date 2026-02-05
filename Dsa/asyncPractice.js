@@ -80,37 +80,37 @@ const { reject } = require("async");
 //     console.log(error)
 // }).finally("program executed finally !!!!")
 // 4. Use Promise.resolve() to immediately resolve a value.
-const cat=new Promise((resolve,reject)=>{
-    fetch("https://api.freeapi.app/api/v1/public/randomproducts/30")
-    .then((response)=>{
-        resolve(response)    
-    })
-    .catch(error => reject(error));
-})
-cat.then((res)=>res.json())
-   .then((data)=>{
-      console.log(data)
-   })
-   .catch((err)=>{
-    console.log(err)
-   })
- // 5. Use Promise.reject() to immediately reject with an error.
-const product=new Promise((resolve,reject)=>{
-    fetch("https://api.freeapi.app/api/v1/public/cats/cat/random")
-    .then((response)=>{
-        if(response.ok){
-            resolve(response)
-        }else{
-            reject("Network not found")
-        }
-    })
-})
-product.then(data=>data.json())
-.then((res)=>{
-    console.log(res)
-}).catch((err)=>{
-    console.log(err)
-})
+// const cat=new Promise((resolve,reject)=>{
+//     fetch("https://api.freeapi.app/api/v1/public/randomproducts/30")
+//     .then((response)=>{
+//         resolve(response)    
+//     })
+//     .catch(error => reject(error));
+// })
+// cat.then((res)=>res.json())
+//    .then((data)=>{
+//       console.log(data)
+//    })
+//    .catch((err)=>{
+//     console.log(err)
+//    })
+//  // 5. Use Promise.reject() to immediately reject with an error.
+// const product=new Promise((resolve,reject)=>{
+//     fetch("https://api.freeapi.app/api/v1/public/cats/cat/random")
+//     .then((response)=>{
+//         if(response.ok){
+//             resolve(response)
+//         }else{
+//             reject("Network not found")
+//         }
+//     })
+// })
+// product.then(data=>data.json())
+// .then((res)=>{
+//     console.log(res)
+// }).catch((err)=>{
+//     console.log(err)
+// })
 // 6. Convert a callback-based function (e.g., setTimeout) into a Promise.  
 // 7. Write an async function that returns a string and log it using await.
 // 8. Write an async function that throws an error and handle it using try/catch.
@@ -161,16 +161,92 @@ product.then(data=>data.json())
 // 43. Use Promise.any() to get the first successful result among multiple async calls.
 // 44. Implement a timeout wrapper for any async function using Promise.race().
 // 45. Use async/await to fetch data, filter results, and return only specific items.
+async function filterData() {
+    try{
+        const response=await fetch("https://dogapi.dog/api/")
+        const data=await response.json()
+        const value=data.filter((data)=>data>12)
+        console.log(value)
+    }catch(error){
+        alert(error)
+    }
+    
+}
+filterData()
 // 46. Implement a concurrent limit for async requests (e.g., only 3 at a time).
 // 47. Write a function to handle dependent async tasks in order using async/await.
 // 48. Implement a polling function that repeatedly calls an API until a condition is met.
 // 49. Create a function that executes multiple async tasks in batches and collects results.
-const url=[
-    "https://dogapi.dog/api/v2",
-    "https://api.alquran.cloud",
-    "https://alquran.api.islamic.network",
-    "https://alquran.api.alislam.ru"
-]
+const list1=new Promise((resolve,reject)=>{
+    fetch("https://dogapi.dog/api/").then((response)=>{
+        if(!response.ok){
+            alert("sorry")
+        }
+        return response.json()
+    }).then((data)=>{
+        resolve(data)
+    }).catch((res)=>{
+        reject(res)
+    })
+})
+
+const list2=new Promise((resolve,reject)=>{
+    fetch("https://api.alquran.cloud").then((response)=>{
+        if(!response.ok){
+            alert("sorry")
+        }
+        return response.json()
+    }).then((data)=>{
+        resolve(data)
+    }).catch((res)=>{
+        reject(res)
+    })
+})
+
+const list3=new Promise((resolve,reject)=>{
+    fetch("https://alquran.api.islamic.network").then((response)=>{
+        if(!response.ok){
+           reject("sorry")
+        }
+        return response.json()
+    }).then((data)=>{
+        resolve(data)
+    }).catch((res)=>{
+        reject(res)
+    })
+})
+
+
+Promise.all([list1,list2,list3]).then((res)=>{
+    console.log(res)
+}).catch((res)=>{
+    console.log(res)
+})
+
+
+
 
 
 // 50. Implement a function that wraps a callback API into a Promise-based API and demonstrates error handling.
+const asnycWrapper=new Promise((resolve,reject)=>{
+    fetch("https://jsonplaceholder.typicode.com/posts").then((response)=>{
+        if(response.ok){
+            console.log(response)
+            const data=response.json()
+            console.log(data)
+        }else{
+            alert("DataNotfound")
+        }
+    }).then((response)=>{
+        resolve(response)
+    }).catch((error)=>{
+        reject(error)
+    })
+})
+
+
+asnycWrapper.then((data)=>{
+    console.log(data)
+}).catch((data)=>{
+    console.log(data)
+})
