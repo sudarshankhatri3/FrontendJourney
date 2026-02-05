@@ -247,3 +247,27 @@ Promise.all([apiHandler1,apiHandler2,apiHandler3]).then(data=>{
 }).catch(error=>{
     console.log(error)
 })
+
+
+
+async function example() {
+    await dataResponse
+    console.log("hello sudarshan")
+}
+example()
+
+
+async function apiFetcher() {
+    let res=[]
+    let response=await fetch("https://jsonplaceholder.typicode.com/users")
+    let data=await response.json()
+    for(let i=0;i<data.length;i++){
+        if(data[i].id>8){
+            console.log(data[i])
+        }
+    }
+    return res
+    
+}
+
+apiFetcher()
